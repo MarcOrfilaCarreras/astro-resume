@@ -1,0 +1,156 @@
+---
+import DataTest from '../data.json';
+import Translations from '../translations.json';
+
+const experiences = DataTest.data.experiences
+
+/**
+ * Function to capitalize the first letter of each word in a string.
+ * @param {string} text - The input string.
+ * @returns {string} - The string with the first letter of each word capitalized.
+ */
+function capitalizeFirstLetterOfEachWord(text) {
+    return text.toLowerCase().replace(/^(.)|\s+(.)/g, function ($1) {
+        return $1.toUpperCase();
+    });
+}
+---
+<main>
+    <h2>{ Translations.title.work_experience }</h2>
+
+     <div class="container">
+        {
+            experiences.map((experience) =>
+            <div class="event">
+                <a href={ experience.company_linkedin_url } target="_blank">{ capitalizeFirstLetterOfEachWord(experience.company) }</a>
+                <p class="date-range">{ experience.date_range }</p>
+                <h3>{ capitalizeFirstLetterOfEachWord(experience.title) }</h3>
+                <p class="description">{ experience.description }</p>
+            </div>
+            )
+        }
+      </div>
+
+</main>
+<style>
+    h2 {
+        margin: 0;
+        padding: 1em 0;
+
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-align: left;
+
+        width: 100%;
+    }
+
+    h3 {
+        margin: 0;
+        padding: 0;
+
+        font-size: 1.3em;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+
+        color: #232D48;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .event {
+        position: relative;
+        padding: 0 0 2em 0;
+        margin: 0;
+        text-align: left;
+        color: #000;
+    }
+    
+    .date-range {
+        margin: 0;
+        padding: 0 0 0.6em 0;
+
+        font-size: 0.8em;
+        font-weight: 400;
+    }
+
+    .description {
+        padding: 0.75em 0 0 0;
+    }
+
+    a {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        background-color: #F3F6FB;
+        color: #232D48;
+
+        padding: 0.5em;
+        border-radius: 5px;
+        font-size: 0.8em;
+        text-decoration: none;
+
+        cursor: pointer;
+    }
+
+    a:hover {
+        color: #000;
+    }
+
+    @media screen and (max-width: 480px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            position: initial;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 0.7em;
+        }
+
+        .date-range {
+            margin-top: 15px;
+            font-size: 0.7em;
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 600px) {
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            position: initial;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 0.8em;
+        }
+
+        .date-range {
+            margin-top: 15px;
+            font-size: 0.8em;
+        }
+
+        h3 {
+            font-size: 1.3em;
+        }
+    }
+</style>

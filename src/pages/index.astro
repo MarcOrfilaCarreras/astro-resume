@@ -1,0 +1,262 @@
+---
+import Config from '../config.json';
+import Layout from '../layouts/Layout.astro';
+import Links from '../components/Links.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
+import Tech from '../components/Tech.astro';
+import SoftSkills from '../components/SoftSkills.astro';
+import Projects from '../components/Projects.astro';
+---
+<Layout title = {Config.profile.name + ' | Web'}>
+    <div class="content">
+        <img src={ Config.profile.avatar } />
+            
+        <h1>{ Config.profile.name }</h1>
+        <h2>{ Config.profile.headline }</h2>
+    
+        <Links />
+
+        <div class="data">
+            <main>
+                <About />
+                <hr>
+                <Experience />
+                <hr>
+                <Education />
+            </main>
+                
+            <aside>
+                <hr class="hidden">
+                <Tech />
+                <hr>
+                <SoftSkills />
+                <hr>
+                <Projects />
+            </aside>
+        </div>
+        
+        <footer>
+            <p>With ❤️ by <a href={ Config.profile.website }>Marc Orfila</a></p>
+        </footer>
+    </div>
+</Layout>
+    
+<style>
+    .content {
+        margin: 0;
+        padding: 0;
+        margin-top: 100px;
+        max-width: 70em;
+
+        background-color: #fff;
+        text-align: center;
+
+        border-radius: 8px;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+
+        margin-top: -100px;
+
+        border: 12px solid #fff;
+        border-radius: 50%;
+
+        box-shadow: 4px 4px 0px 0px #F3F6FB;
+    }
+
+    .content > h1,
+    .content > h2 {
+        margin: 12px;
+        padding: 0;
+
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+    }
+
+    .content > h1 {
+        font-size: 3em;
+        font-weight: 900;
+    }
+
+    .content > h2 {
+        padding-bottom: 10px !important;
+        color: #232D48;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .data {
+        margin: 0;
+        padding: 20px;
+        display: flex;
+    }
+
+    main, aside {
+      box-sizing: border-box;
+    }
+
+    main {
+        flex: 1;
+        width: 50vw;
+    }
+
+    aside {
+        color: #000;
+        width: 20vw;
+        padding-left: 20px;
+    }
+
+    hr {
+        height: 1px;
+
+        background-color: #DEE6EA;
+        border: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @media screen and (max-width: 480px) {
+        .content {
+            width: auto;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .content > h1 {
+            font-size: 1.5em;
+        }
+
+        .content > h2 {
+            font-size: 1em;
+        }
+
+        footer {
+            font-size: 0.8em;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 600px) {
+        .content {
+            width: auto;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .content > h1 {
+            font-size: 1.7em;
+        }
+
+        .content > h2 {
+            font-size: 1.2em;
+        }
+
+        footer {
+            font-size: 0.9em;
+        }
+    }
+
+    @media (min-width: 601px) and (max-width: 768px) {
+        .content {
+            width: 35em;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .content > h1 {
+            font-size: 1.7em;
+        }
+
+        .content > h2 {
+            font-size: 1.2em;
+        }
+
+        footer {
+            font-size: 0.9em;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 900px) {
+        .content {
+            width: 45em;
+        }
+
+        .content > h1 {
+            font-size: 1.7em;
+        }
+
+        .content > h2 {
+            font-size: 1.2em;
+        }
+
+        footer {
+            font-size: 0.9em;
+        }
+    }
+
+    @media (min-width: 901px) and (max-width: 1024px) {
+        .content > h1 {
+            font-size: 2em;
+        }
+
+        .content > h2 {
+            font-size: 1.4em;
+        }
+
+        footer {
+            font-size: 1em;
+        }
+    }
+
+    @media (min-width: 1025px) and (max-width: 1200px) {
+        .content > h1 {
+            font-size: 2.6em;
+        }
+
+        .content > h2 {
+            font-size: 1.7em;
+        }
+
+        footer {
+            font-size: 1em;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .data {
+            flex-direction: column;
+        }
+
+        main {
+            width: auto;
+        }
+
+        aside {
+            width: auto;
+            padding: 0;
+        }
+
+        .hidden {
+            display: block;
+        }
+    }
+</style>

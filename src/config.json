@@ -1,0 +1,31 @@
+{
+    "profile": {
+        "avatar": "/images/avatar.jpg",
+        "name": "Marc Orfila Carreras",
+        "headline": "Desarrollador Junior",
+        "email": "hola@marcorfilacarreras.cloud",
+        "website": "https://www.marcorfilacarreras.cloud",
+        "about": "Desarrollador de aplicaciones multiplataforma recién graduado, con un sólido conjunto de habilidades en programación y resolución de problemas.  Mi experiencia abarca lenguajes de programación como Java o Python. Con ganas de seguir creciendo y enfrentar nuevos retos."
+    },
+    "skills": [
+        "Flexibilidad",
+        "Meticuloso",
+        "Compromiso",
+        "Equipo",
+        "Independiente"
+    ],
+    "projects": [
+        {
+            "name": "Duplicati Dashboard",
+            "website": "https://github.com/MarcOrfilaCarreras/duplicati-dashboard"
+        },
+        {
+            "name": "Padelquest",
+            "website": "https://github.com/MarcOrfilaCarreras/padelquest"
+        },
+        {
+            "name": "Codebox",
+            "website": "https://github.com/MarcOrfilaCarreras/codebox-thefullstack-hackathon"
+        }
+    ]
+}

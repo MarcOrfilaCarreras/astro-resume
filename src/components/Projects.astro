@@ -1,0 +1,78 @@
+---
+import Config from '../config.json';
+import Translations from '../translations.json';
+
+const projects = Config.projects
+---
+<main>
+    <h2>{ Translations.title.projects }</h2>
+
+     <div class="container">
+        
+        {
+            projects.map((project) =>
+            <a href={ project.website }>{ project.name }</a>
+            )
+        }
+
+      </div>
+
+</main>
+<style>
+    h2 {
+        margin: 0;
+        padding: 1em 0;
+
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-align: left;
+
+        width: 100%;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #F3F6FB;
+        color: #232D48;
+
+        padding: 0.5em;
+        border-radius: 5px;
+        font-size: 0.8em;
+
+        text-decoration: none;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    @media screen and (max-width: 480px) {
+        h2 {
+            font-size: 1.2em;
+            padding-top: 0.75em;
+        }
+    }
+
+    @media (min-width: 901px) and (max-width: 1200px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 0 0 1em 0;
+        }
+    }
+
+    @media (min-width: 1201px) and (max-width: 1400px){
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            padding: 0 0 1em 0;
+        }
+    }
+</style>

@@ -1,0 +1,47 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	html {
+		margin: 0;
+		padding: 0;
+		
+		background: radial-gradient(circle, rgba(35, 45, 72, 0.15) 10%, rgba(35, 45, 72, 0) 11%);
+		background-size: 2em 2em;
+		background-color: #F3F6FB;
+
+		color: #000;
+
+		font-family: 'Roboto', sans-serif;
+	}
+
+	body {
+		margin: 0;
+		padding: 48px;
+
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+	}
+</style>

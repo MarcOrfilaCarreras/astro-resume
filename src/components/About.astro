@@ -1,0 +1,44 @@
+---
+import Config from '../config.json';
+import Translations from '../translations.json';
+
+const content = Config.profile.about
+---
+<main>
+    <h2>{ Translations.title.about_me }</h2>
+
+     <div class="container">
+        <p>{ content }</p>
+    </div>
+
+</main>
+<style>
+    h2 {
+        margin: 0;
+        padding: 0 0 0.75em 0;
+
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-align: left;
+
+        width: 100%;
+    }
+
+    p {
+        margin: 0;
+        padding: 0 0 1.5em 0;
+
+        color: #232D48;
+        text-align: left;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+        h2 {
+            font-size: 1.2em;
+        }
+    }
+</style>
